@@ -21,16 +21,6 @@ class FileStorage:
             return cls_dict
         return self.__objects
 
-#        if cls is not None:
-#            if isinstance(cls, str):
-#               cls = eval(cls)
-#   #         cls_dict = {}
-#    #        for key, value in self.__objects.items():
-#     #           if type(value) == cls:
-#      #              cls_dict[key] = value
-#       #     return cls_dict
-#        #return FileStorage.__objects
-
     def new(self, obj):
         """Adds new object to storage dictionary"""
         self.all().update({obj.to_dict()['__class__'] + '.' + obj.id: obj})
