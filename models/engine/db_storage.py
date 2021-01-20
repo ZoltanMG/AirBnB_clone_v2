@@ -45,7 +45,9 @@ class DBStorage:
         dicc = {}
         if cls:
             query = self.__session.query(cls)
-# eval en el quiery
+
+            print("\n\n-------------------->:\n{}\n\n\n".format(query))####################
+
             for clase in query:
                 key = "{}.{}".format(type(clase).__name__, clase.id)
                 dicc[key] = clase
