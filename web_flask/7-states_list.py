@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/states_list", strict_slashes=False)
 def states_list():
     """
-    route states_list
+    route /states_list that send the states to jinja2
     """
     states = storage.all("State")
 
@@ -20,7 +20,7 @@ def states_list():
 @app.teardown_appcontext
 def teardown_appcontext(response_or_exc):
     """
-    teardown_appcontext
+    teardown_appcontext to close session
     """
     storage.close()
 
