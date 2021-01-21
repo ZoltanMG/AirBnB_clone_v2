@@ -28,7 +28,6 @@ class DBStorage:
     def __init__(self):
         """ this is a documentation """
 
-#        print("\n\n\n\n---------------------------->:\n\n\n\n")############################
         user = getenv('HBNB_MYSQL_USER')
         password = getenv('HBNB_MYSQL_PWD')
         host = getenv('HBNB_MYSQL_HOST')
@@ -49,8 +48,6 @@ class DBStorage:
             if type(cls) == str:
                 cls = eval(cls)
             query = self.__session.query(cls)
-
-            print("\n\n\n\n---------------------------->:\n{}\n\n\n".format(type(cls)))####################
 
             for clase in query:
                 key = "{}.{}".format(type(clase).__name__, clase.id)
